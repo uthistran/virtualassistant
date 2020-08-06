@@ -1,12 +1,21 @@
 {
     "initial": "Hello Friend!, I am your Chat assitant help you across the functionalities of this website and support your query 24X7. Please type in your question",
     "mail": "uthistran@gmail.com",
+    "mobile" : "775-xxx-xxxx",
     "address": "",
     "developer": "Uthistran Selvaraj",
     "version": "1.0",
-    "framework": "React+Node",
+    "devframework": "React+Node",
     "twitter" : "https://twitter.com/Uthistran",
     "github" : "https://github.com/uthistran",
     "stackoverflow" : "https://stackoverflow.com/users/1817401/uthistran-selvaraj",
-    "experience" : ""
+    "linkedin" : "https://www.linkedin.com/in/uthistran-selvaraj-63762093/",
+    "experience" : "8|calc",
+    "graduation" : "Bachelor of Engineering",
+    "college" : "PSR Engineering College",
+    "currentemployer" : "Scientific Games Corporation",
+    "previous" : "Syncfusion Software",
+    "knownframework" : ["JavaScript", "AngularJS", "ReactJS", "NodeJS", "HTML5", ".Net"],
+    "products" : ["PDFViewer", "WebContentManager"],
+    "methodologies" : "Agile"
 }

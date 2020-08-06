@@ -1,10 +1,10 @@
 {
     "responseMapping": {
         "contact": "mail",
-        "developed" : "framework",
+        "developed" : "devframework",
         "platform" : "framework",
         "development" : "framework",
-        "profile" : ["twitter", "github" , "stackoverflow"]
+        "profile" : ["twitter", "github" , "stackoverflow", "linkedin"]
     },
     "ignoreTexts": [
         "how",
