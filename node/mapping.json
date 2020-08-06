@@ -1,0 +1,15 @@
+{
+    "responseMapping": {
+        "contact": "mail",
+        "developed" : "framework",
+        "platform" : "framework",
+        "development" : "framework",
+        "profile" : ["twitter", "github" , "stackoverflow"]
+    },
+    "ignoreTexts": [
+        "how",
+        "can",
+        "I",
+        "where", "what"
+    ]
+}
