@@ -9,10 +9,13 @@ var Connector = /** @class */ (function () {
     function Connector() {
         this.Port = 3000;
     }
-    Connector.prototype.connect = function () {
+    Connector.prototype.connect = function (controllers) {
         var app = express_1.default();
-        app.get('/', function (req, res) {
-            res.send('helloworld');
+        // app.get('/', function (req, res) {
+        //     res.send('helloworld');
+        // })
+        controllers.forEach(function (controller) {
+            app.use('/', controller.router);
         });
         app.listen(this.Port);
     };
