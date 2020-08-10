@@ -16,6 +16,10 @@ export class Connector {
             app.use('/', controller.router);
           });
 
-        app.listen(this.Port);
+        app.listen(this.Port, this.connected.bind(this));
+    }
+
+    private connected(){
+        console.log("Connected in Port : " + this.Port);
     }
 }

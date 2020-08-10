@@ -17,7 +17,10 @@ var Connector = /** @class */ (function () {
         controllers.forEach(function (controller) {
             app.use('/', controller.router);
         });
-        app.listen(this.Port);
+        app.listen(this.Port, this.connected.bind(this));
+    };
+    Connector.prototype.connected = function () {
+        console.log("Connected in Port : " + this.Port);
     };
     return Connector;
 }());

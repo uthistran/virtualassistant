@@ -1,17 +1,26 @@
 import express from 'express'
 import { IConnection } from './iconnection';
+import { VAProcessor } from './vaprocessor';
+import { IRequest } from './irequest';
+import { IResponse } from './iresponse';
 export default class Receiver extends IConnection{
     
+    _vaprocessor = new VAProcessor();
     constructor(){
         super()
         this.initializeRoutes();
     }
 
     public initializeRoutes() {
-        this.router.get('/route', this.routeHandler)
+        this.router.post('/route', this.routeHandler.bind(this))
     }
-    routeHandler(request : express.Request, response : express.Response) {
-        response.send('you reached');
+    private routeHandler(request : express.Request, response : express.Response) {
+        let answer = this.processRequest(request.body as IRequest);
+        response.send(answer);
+    }
+
+    private processRequest(question : IRequest) : IResponse{
+        return this._vaprocessor.ProcessRequest(question)
     }
 
 }

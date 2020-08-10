@@ -14,19 +14,24 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var iconnection_1 = require("./iconnection");
+var vaprocessor_1 = require("./vaprocessor");
 var Receiver = /** @class */ (function (_super) {
     __extends(Receiver, _super);
-    //public router = express.Router();
     function Receiver() {
         var _this = _super.call(this) || this;
+        _this._vaprocessor = new vaprocessor_1.VAProcessor();
         _this.initializeRoutes();
         return _this;
     }
     Receiver.prototype.initializeRoutes = function () {
-        this.router.get('/route', this.routeHandler);
+        this.router.post('/route', this.routeHandler.bind(this));
     };
     Receiver.prototype.routeHandler = function (request, response) {
-        response.send('you reached');
+        var answer = this.processRequest(request.body);
+        response.send(answer);
+    };
+    Receiver.prototype.processRequest = function (question) {
+        return this._vaprocessor.ProcessRequest(question);
     };
     return Receiver;
 }(iconnection_1.IConnection));
