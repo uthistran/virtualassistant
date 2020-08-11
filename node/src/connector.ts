@@ -11,7 +11,7 @@ export class Connector {
         // app.get('/', function (req, res) {
         //     res.send('helloworld');
         // })
-
+        
         controllers.forEach((controller : IConnection) => {
             app.use('/', controller.router);
           });

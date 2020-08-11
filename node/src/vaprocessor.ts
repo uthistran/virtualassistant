@@ -5,6 +5,7 @@ import { DataProvider } from "./dataprovider";
 export class VAProcessor{
     
     public ProcessRequest(question : IRequest) : IResponse{
+        console.log(question)
         let res = DataProvider.ResponseTexts;
         let resobj = { "answer" : {}}
         resobj["answer"] = res;

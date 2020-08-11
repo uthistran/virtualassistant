@@ -10,8 +10,8 @@ class JSONProvider {
         rawdata = fs.readFileSync(path.resolve(__dirname, '../response.json'))
         this.ResponseTexts = JSON.parse(rawdata.toString());
     }
-    public Mapping: {};
-    public IgnoreTexts: {};
+    public Mapping: any;
+    public IgnoreTexts: any;
     public ResponseTexts: any;
 }
 

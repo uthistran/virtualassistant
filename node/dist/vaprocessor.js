@@ -6,6 +6,7 @@ var VAProcessor = /** @class */ (function () {
     function VAProcessor() {
     }
     VAProcessor.prototype.ProcessRequest = function (question) {
+        console.log(question);
         var res = dataprovider_1.DataProvider.ResponseTexts;
         var resobj = { "answer": {} };
         resobj["answer"] = res;

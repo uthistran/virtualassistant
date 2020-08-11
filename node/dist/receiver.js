@@ -15,7 +15,6 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var iconnection_1 = require("./iconnection");
 var vaprocessor_1 = require("./vaprocessor");
-var dataprovider_1 = require("./dataprovider");
 var Receiver = /** @class */ (function (_super) {
     __extends(Receiver, _super);
     function Receiver() {
@@ -25,11 +24,7 @@ var Receiver = /** @class */ (function (_super) {
         return _this;
     }
     Receiver.prototype.initializeRoutes = function () {
-        this.router.post('/route', this.routeHandler.bind(this));
-        this.router.post('/test', (function (request, response) {
-            dataprovider_1.DataProvider.ResponseTexts.test = "worked",
-                response.send("added");
-        }).bind(this));
+        this.router.post('/query', this.jsonParser, this.routeHandler.bind(this));
     };
     Receiver.prototype.routeHandler = function (request, response) {
         var answer = this.processRequest(request.body);
