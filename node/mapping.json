@@ -1,15 +1,41 @@
 {
     "responseMapping": {
         "contact": "mail",
-        "developed" : "devframework",
-        "platform" : "framework",
-        "development" : "framework",
-        "profile" : ["twitter", "github" , "stackoverflow", "linkedin"]
+        "mail": "mail",
+        "developed": "devframework",
+        "platform": "framework",
+        "development": "framework",
+        "profile": [
+            "twitter",
+            "github",
+            "stackoverflow",
+            "linkedin"
+        ]
     },
-    "ignoreTexts": [
-        "how",
-        "can",
-        "I",
-        "where", "what"
+    "keywords": [
+        "dob",
+        "fullname",
+        "study",
+        "experience",
+        "frameworks",
+        "profile",
+        "fb",
+        "facebook",
+        "website",
+        "twitter",
+        "github",
+        "stackoverflow",
+        "linkedin",
+        "development",
+        "mail",
+        "address",
+        "phone",
+        "contact",
+        "products",
+        "softwares",
+        "company",
+        "organization",
+        "current employer",
+        "previous employers"
     ]
 }

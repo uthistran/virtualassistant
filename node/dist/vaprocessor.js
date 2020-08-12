@@ -12,7 +12,11 @@ var VAProcessor = /** @class */ (function () {
         resobj["answer"] = res;
         // let _obj: IResponse = JSON.parse('{"answer" : "hello world"}');
         // return _obj;
+        this.findKeyword(question.question);
         return resobj;
+    };
+    VAProcessor.prototype.findKeyword = function (question) {
+        var words = question.split(' ');
     };
     return VAProcessor;
 }());
