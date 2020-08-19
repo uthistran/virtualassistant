@@ -7,7 +7,7 @@ class HeaderComponent extends React.Component {
     render() {
         return (
             <div className='header'>
-                <div className='heading'>Virtual Assitant</div>
+                <div className='heading'>Virtual Assistant</div>
                 <div className='controlMinimize'>
                     <img src={minus} alt="minimize" />
                 </div>

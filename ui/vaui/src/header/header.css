@@ -3,14 +3,16 @@
     height: 70px;
     display: inline-block;
     border-radius: 15px;
+    line-height: 70px;
 }
 
 .header .heading{
     width: 80%;
     display: inline-block;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     color: #fff;
+    font-family: cursive;
 }
 
 .header .controlMinimize, .header .controlClose{
