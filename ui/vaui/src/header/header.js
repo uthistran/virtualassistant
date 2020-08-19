@@ -8,10 +8,10 @@ class HeaderComponent extends React.Component {
         return (
             <div className='header'>
                 <div className='heading'>Virtual Assistant</div>
-                <div className='controlMinimize'>
+                <div className='controlMinimize' onClick={this.props.onMinimizeClick}>
                     <img src={minus} alt="minimize" />
                 </div>
-                <div className='controlClose'>
+                <div className='controlClose' onClick={this.props.onCloseClick}>
                     <img src={close} alt="close" />
                 </div>
             </div>
