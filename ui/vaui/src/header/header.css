@@ -1,0 +1,23 @@
+.header{
+    background-color: #049292;
+    height: 70px;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.header .heading{
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.header .controlMinimize, .header .controlClose{
+    width: 10%;
+    display: inline-block;
+    text-align: center;
+}
+.header .controlMinimize img, .header .controlClose img{
+    width: 50%;
+}
