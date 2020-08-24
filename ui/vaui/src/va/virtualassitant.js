@@ -2,6 +2,7 @@ import React from 'react'
 import HeaderComponent from '../header/header'
 import './virtualassistant.css'
 import MinWindow from '../minwindow/minwindow'
+import InputComponent from '../input/input';
 
 class VirtualAssistantComponent extends React.Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class VirtualAssistantComponent extends React.Component {
         else {
             displayElement = <div className='main'>
                 <HeaderComponent onCloseClick={this.handleCloseClick} onMinimizeClick={this.handleMinimizeClick}></HeaderComponent>
+                <InputComponent></InputComponent>
             </div>
         }
         return displayElement;

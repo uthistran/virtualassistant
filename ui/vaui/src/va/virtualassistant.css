@@ -1,6 +1,6 @@
 .main {
-    width: calc(100%/3 - 100px);
-    height: calc(100%/2 + 100px);
+    width: calc(100%/3 - 150px);
+    height: calc(100%/2 + 200px);
     border: 1px solid #049292;
     border-radius: 15px;
     position: absolute;
