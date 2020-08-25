@@ -13,9 +13,9 @@
     border-radius: 13px;
     float: left;
     border: none;
-    vertical-align: middle;
     outline: none;
     resize: none;
+    max-height: calc(100% - 10px);
 }
 
 .sendButton {

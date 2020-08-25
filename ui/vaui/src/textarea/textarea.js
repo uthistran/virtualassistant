@@ -14,6 +14,8 @@ class TextAreaComponent extends React.Component {
         this.setState(
             { textValue: event.target.value }
         )
+        event.target.style.height = 'inherit';
+        event.target.style.height = `${event.target.scrollHeight}px`; 
     }
 
     render() {
