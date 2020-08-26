@@ -3,6 +3,7 @@ import HeaderComponent from '../header/header'
 import './virtualassistant.css'
 import MinWindow from '../minwindow/minwindow'
 import InputComponent from '../input/input';
+import ActionCall from '../actioncall/actioncall';
 
 class VirtualAssistantComponent extends React.Component {
     constructor(props) {
@@ -13,6 +14,14 @@ class VirtualAssistantComponent extends React.Component {
         this.handleCloseClick = this.handleCloseClick.bind(this);
         this.handleMinimizeClick = this.handleMinimizeClick.bind(this);
         this.handleMinWindowClick = this.handleMinWindowClick.bind(this);
+    }
+
+    componentDidMount(){
+        ActionCall.post("", JSON.stringify({question : 'initialize'}), handleActionResponse);
+    }
+
+    handleActionResponse(response){
+        
     }
 
     handleCloseClick() {
