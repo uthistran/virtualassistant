@@ -7,7 +7,8 @@ class ActionCall{
                 'Content-Type': 'application/json',
               },
               body : data
-        }).then(
+        }).then(res => res.json())
+        .then(
             (result) => {
                 response(result);
             },
@@ -21,4 +22,4 @@ class ActionCall{
     }
 }
 
-export default ActionCall();
+export default new ActionCall();

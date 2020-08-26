@@ -16,12 +16,14 @@ class VirtualAssistantComponent extends React.Component {
         this.handleMinWindowClick = this.handleMinWindowClick.bind(this);
     }
 
+    qaarray = [];
+
     componentDidMount(){
-        ActionCall.post("", JSON.stringify({question : 'initialize'}), handleActionResponse);
+        ActionCall.post("http://10.10.223.130:8888/initialize", JSON.stringify({question : 'initialize'}), this.handleActionResponse.bind(this));
     }
 
     handleActionResponse(response){
-        
+        this.qaarray.push(response);
     }
 
     handleCloseClick() {
