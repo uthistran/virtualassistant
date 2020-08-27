@@ -27,7 +27,7 @@ var Initializer = /** @class */ (function (_super) {
     };
     Initializer.prototype.routeHandler = function (request, response) {
         this.initialize();
-        response.send({ "answer": "I am virtual PA of Uthistran. Type in the question you want to know about him" });
+        response.send({ "answer": "I am virtual PA of Uthis. Type in the question you want to know about him" });
     };
     Initializer.prototype.initialize = function () {
     };
