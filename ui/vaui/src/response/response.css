@@ -1,0 +1,21 @@
+.responseDiv {
+    width: 100%;
+    overflow: auto;
+}
+
+.responseDiv .avatarDiv{
+    width: 20%;
+    float: left;
+}
+
+.responseDiv .avatarDiv img{
+    width : 100%;
+}
+
+.responseDiv  .responseText{
+    width: 75%;
+    float: left;
+    margin-left: 5%;
+    font-size: 20px;
+}
+

@@ -3,8 +3,7 @@
     height: 13%;
     bottom: 0px;
     float: left;
-    border: 1px solid #049292;
-    border-radius: 13px;
+    border-top: 1px solid #049292;
     position: absolute;
 }
 
@@ -16,6 +15,7 @@
     outline: none;
     resize: none;
     max-height: calc(100% - 10px);
+    margin-top: 1px;
 }
 
 .sendButton {
