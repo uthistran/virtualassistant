@@ -1,4 +1,5 @@
 import React from 'react'
+import './query.css'
 
 class QueryComponent extends React.Component {
     render() {

@@ -3,6 +3,7 @@ import TextAreaComponent from '../textarea/textarea';
 import './input.css'
 import sendIcon from './send.svg'
 import ActionCall from '../actioncall/actioncall';
+import DataContext from '../context/datacontent';
 
 class InputComponent extends React.Component {
     constructor() {
@@ -14,20 +15,31 @@ class InputComponent extends React.Component {
         this.handleSendClick = this.handleSendClick.bind(this);
     }
 
+    static contextType = DataContext;
+
     handleValueChange(event) {
         this.setState(
             { textValue: event.target.value }
         )
         event.target.style.height = 'inherit';
-        event.target.style.height = `${event.target.scrollHeight}px`; 
+        event.target.style.height = `${event.target.scrollHeight}px`;
     }
 
     handleSendClick() {
-        ActionCall.post('http://10.10.223.130:8888/query', JSON.stringify({'question' : this.state.textValue}), this.handleResponse.bind(this))
+        this.context.updateValue({ 'query': this.state.textValue });
+        ActionCall.post('http://10.10.223.101:8888/query', JSON.stringify({ 'question': this.state.textValue }), this.handleResponse.bind(this))
+		this.setState(
+            {textValue : ""}
+        )
     }
 
-    handleResponse(response){
-
+    handleResponse(response) {
+        if (response.isSuccess) {
+            this.context.updateValue(response.result);
+        }
+        else {
+            console.log('Connection error')
+        }
     }
 
     render() {

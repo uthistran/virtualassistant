@@ -1,0 +1,24 @@
+.queryDiv {
+    text-align: right;
+    width: 86%;
+    margin-left: 5px;
+    font-size: 20px;
+    margin-top: 8px;
+    background: #89da8d;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.queryDiv::before{
+    content: "";
+    position: absolute;
+    border-right: 15px solid transparent;
+    border-top: 9px solid #89da8d;
+    right: -14px;
+    top: 0px;
+}

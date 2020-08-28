@@ -10,10 +10,16 @@ class ActionCall{
         }).then(res => res.json())
         .then(
             (result) => {
-                response(result);
+                var responseBuilder = {}
+                responseBuilder["result"] = result;
+                responseBuilder["isSuccess"] = true;
+                response(responseBuilder);
             },
             (error) => {
-                response(error)
+                var responseBuilder = {}
+                responseBuilder["result"] = error;
+                responseBuilder["isSuccess"] = false;
+                response(responseBuilder);
             }
         )
     }
