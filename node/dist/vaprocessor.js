@@ -9,7 +9,7 @@ var VAProcessor = /** @class */ (function () {
         console.log(question);
         var res = dataprovider_1.DataProvider.ResponseTexts;
         var resobj = { "answer": {} };
-        resobj["answer"] = res;
+        resobj["answer"] = res.developer;
         // let _obj: IResponse = JSON.parse('{"answer" : "hello world"}');
         // return _obj;
         this.findKeyword(question.question);

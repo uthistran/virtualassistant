@@ -8,7 +8,7 @@ export class VAProcessor{
         console.log(question)
         let res = DataProvider.ResponseTexts;
         let resobj = { "answer" : {}}
-        resobj["answer"] = res;
+        resobj["answer"] = res.developer;
         // let _obj: IResponse = JSON.parse('{"answer" : "hello world"}');
         // return _obj;
         this.findKeyword(question.question);
