@@ -27,7 +27,7 @@ class InputComponent extends React.Component {
 
     handleSendClick() {
         this.context.updateValue({ 'query': this.state.textValue });
-        ActionCall.post('http://10.10.223.101:8888/query', JSON.stringify({ 'question': this.state.textValue }), this.handleResponse.bind(this))
+        ActionCall.post('http://10.10.221.172:8888/query', JSON.stringify({ 'question': this.state.textValue }), this.handleResponse.bind(this))
 		this.setState(
             {textValue : ""}
         )
