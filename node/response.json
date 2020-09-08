@@ -1,8 +1,9 @@
 {
-    "initial": "Hello Friend!, I am your Chat assitant help you across the functionalities of this website and support your query 24X7. Please type in your question",
+    "initial": "Hello Friend!, I am your Chat assitant help you know about Uthis and support your query 24X7. Please type in your question",
     "mail": "uthistran@gmail.com",
     "mobile": "775-xxx-xxxx",
-    "address": "",
+    "dob" : "October 8th",
+    "address": "He told me to not share his address, anyway you can contact him in his mailid : uthistran@gmail.com",
     "developer": "Uthistran Selvaraj",
     "version": "1.0",
     "devframework": "React+Node",
@@ -10,6 +11,7 @@
     "github": "https://github.com/uthistran",
     "stackoverflow": "https://stackoverflow.com/users/1817401/uthistran-selvaraj",
     "linkedin": "https://www.linkedin.com/in/uthistran-selvaraj-63762093/",
+    "fb" : "He is not using Facebook Actively",
     "experience": "8|calc",
     "graduation": {
         "where": "PSR Engineering College, India",
@@ -39,5 +41,9 @@
         "WebContentManager"
     ],
     "methodologies": "Agile",
-    "location": "LasVegas, Nevada"
+    "location": "LasVegas, Nevada",
+    "websites" : [
+        "https://kovilpatti.co.in/appletree/",
+        "http://lvcasinosonline.com/"
+    ]
 }

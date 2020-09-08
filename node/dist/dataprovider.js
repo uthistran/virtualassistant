@@ -11,7 +11,6 @@ var JSONProvider = /** @class */ (function () {
         var rawdata = fs_1.default.readFileSync(path_1.default.resolve(__dirname, '../mapping.json'));
         var _obj = JSON.parse(rawdata.toString());
         this.Mapping = _obj.responseMapping;
-        this.Keywords = _obj.keywords;
         rawdata = fs_1.default.readFileSync(path_1.default.resolve(__dirname, '../response.json'));
         this.ResponseTexts = JSON.parse(rawdata.toString());
     }
