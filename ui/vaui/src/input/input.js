@@ -18,16 +18,22 @@ class InputComponent extends React.Component {
     static contextType = DataContext;
 
     handleValueChange(event) {
-        this.setState(
-            { textValue: event.target.value }
-        )
-        event.target.style.height = 'inherit';
-        event.target.style.height = `${event.target.scrollHeight}px`;
+        let updatedValue =  event.target.value;
+        if(updatedValue[updatedValue.length -1] === '\n'){
+            this.handleSendClick()
+        }
+        else{
+            this.setState(
+                { textValue: updatedValue }
+            )
+            event.target.style.height = 'inherit';
+            event.target.style.height = `${event.target.scrollHeight}px`;
+        }
     }
 
     handleSendClick() {
         this.context.updateValue({ 'query': this.state.textValue });
-        ActionCall.post('http://10.10.221.172:8888/query', JSON.stringify({ 'question': this.state.textValue }), this.handleResponse.bind(this))
+        ActionCall.post('http://10.10.241.63:8888/query', JSON.stringify({ 'question': this.state.textValue }), this.handleResponse.bind(this))
 		this.setState(
             {textValue : ""}
         )

@@ -8,17 +8,17 @@ class QueryResponseContainer extends React.Component {
     render() {
         var elements = [];
         var values = this.props.value;
-        for(var i =0; i< values.length; i++){
-            if((Object.keys(values[i]))[0] === 'answer'){
+        for (var i = 0; i < values.length; i++) {
+            if ((Object.keys(values[i]))[0] === 'answer') {
                 var answer = values[i]['answer'];
                 elements.push(<ResponseComponent value={answer} key={i}></ResponseComponent>)
-            }else {
+            } else {
                 elements.push(<QueryComponent value={values[i]['query']} key={i}></QueryComponent>)
             }
         }
 
         return (
-            <div className='queryContainer'>
+            <div className='queryContainer' >
                 {
                     elements
                 }

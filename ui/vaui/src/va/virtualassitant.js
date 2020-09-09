@@ -20,7 +20,7 @@ class VirtualAssistantComponent extends React.Component {
     }
 
     componentDidMount() {
-        ActionCall.post("http://10.10.221.172:8888/initialize", JSON.stringify({ question: 'initialize' }), this.handleActionResponse.bind(this));
+        ActionCall.post("http://10.10.241.63:8888/initialize", JSON.stringify({ question: 'initialize' }), this.handleActionResponse.bind(this));
     }
 
     handleActionResponse(response) {
