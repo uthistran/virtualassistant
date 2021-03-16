@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from StarboyPeace</title>
+
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>
+<script src="StarboyPeace.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Backgroundv2.png", id:"Backgroundv2"},
+		{src:"images/BoyEyesClosed.png", id:"BoyEyesClosed"},
+		{src:"images/BoyOnlyEyes.png", id:"BoyOnlyEyes"},
+		{src:"images/brown_blink_1.jpg", id:"brown_blink_1"},
+		{src:"images/brown_blink_2.png", id:"brown_blink_2"},
+		{src:"images/brown_blink_3.jpg", id:"brown_blink_3"},
+		{src:"images/Cropped980MenuBareEnterYourChildWithGlowButtedToTop.png", id:"Cropped980MenuBareEnterYourChildWithGlowButtedToTop"},
+		{src:"images/fly_1.png", id:"fly_1"},
+		{src:"images/fly_2.png", id:"fly_2"},
+		{src:"images/Frame1.jpg", id:"Frame1"},
+		{src:"images/Framev1.jpg", id:"Framev1"},
+		{src:"images/gazebobackground.png", id:"gazebobackground"},
+		{src:"images/Gazebo_main.jpg", id:"Gazebo_main"},
+		{src:"images/girl_blink_1.png", id:"girl_blink_1"},
+		{src:"images/girl_blink_2.png", id:"girl_blink_2"},
+		{src:"images/girl_blink_3.png", id:"girl_blink_3"},
+		{src:"images/HiImALittleispeace.png", id:"HiImALittleispeace"},
+		{src:"images/HiImALittle.png", id:"HiImALittle"},
+		{src:"images/ICanMakepeace.png", id:"ICanMakepeace"},
+		{src:"images/ICanMake.png", id:"ICanMake"},
+		{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		{src:"images/MenuHeader101.png", id:"MenuHeader101"},
+		{src:"images/PixieDust.png", id:"PixieDust"},
+		{src:"images/RabbitEyes.png", id:"RabbitEyes"},
+		{src:"images/RabbitEyesClosed.png", id:"RabbitEyesClosed"},
+		{src:"images/Smile.png", id:"Smile"},
+		{src:"images/StageBottomcopy.png", id:"StageBottomcopy"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"},
+		{src:"images/Wings.png", id:"Wings"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.StarboyPeace();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 30;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>

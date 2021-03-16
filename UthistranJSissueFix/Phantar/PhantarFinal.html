@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from PhantarFinal</title>
+
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>	
+<script src="PhantarFinal.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Bkgrnd_Small.png", id:"Bkgrnd_Small"},
+		{src:"images/ComeVisit.png", id:"ComeVisit"},
+		{src:"images/Glow.png", id:"Glow"},
+		{src:"images/GoldRing101.png", id:"GoldRing101"},
+		{src:"images/GoldRing102.png", id:"GoldRing102"},
+		{src:"images/GoldRing103.png", id:"GoldRing103"},
+		{src:"images/GoldRing104.png", id:"GoldRing104"},
+		{src:"images/HiPhantar.png", id:"HiPhantar"},
+		{src:"images/ITeach.png", id:"ITeach"},
+		{src:"images/InChargeofCosmicCoincidence.png", id:"InChargeofCosmicCoincidence"},
+		{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		{src:"images/LowerBar101.png", id:"LowerBar101"},
+		{src:"images/MenuHeader101.png", id:"MenuHeader101"},
+		{src:"images/Phantar_eyeBlkink101.jpg", id:"Phantar_eyeBlkink101"},
+		{src:"images/Phantar_eyeBlkink202.png", id:"Phantar_eyeBlkink202"},
+		{src:"images/Phantar_eyeBlkink303.png", id:"Phantar_eyeBlkink303"},
+		{src:"images/PhantarBody101.png", id:"PhantarBody101"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TemplateEndle.jpg", id:"TemplateEndle"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.PhantarFinal();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 30;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>

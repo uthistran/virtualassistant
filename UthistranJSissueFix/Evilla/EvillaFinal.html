@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from EvillaFinal</title>
+
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>	
+<script src="EvillaFinal.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Abysson.png", id:"Abysson"},
+		{src:"images/Abyssonpngcopy.png", id:"Abyssonpngcopy"},
+		{src:"images/Bkgrnd_Small.jpg", id:"Bkgrnd_Small"},
+		{src:"images/BlueGlow.png", id:"BlueGlow"},
+		{src:"images/Evilla_Hirez101.png", id:"Evilla_Hirez101"},
+		{src:"images/EvillaEyeBlink101.png", id:"EvillaEyeBlink101"},
+		{src:"images/EvillaEyeBlink202.png", id:"EvillaEyeBlink202"},
+		{src:"images/EvillaEyeBlink303.png", id:"EvillaEyeBlink303"},
+		{src:"images/GoldRing101.png", id:"GoldRing101"},
+		{src:"images/GoldRing102.png", id:"GoldRing102"},
+		{src:"images/GoldRing103.png", id:"GoldRing103"},
+		{src:"images/GoldRing104.png", id:"GoldRing104"},
+		{src:"images/HiImEvilla.png", id:"HiImEvilla"},
+		{src:"images/IUsedtoBeHope.png", id:"IUsedtoBeHope"},
+		{src:"images/IDoWantEn.png", id:"IDoWantEn"},
+		{src:"images/ISayWho.png", id:"ISayWho"},
+		{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		{src:"images/LowerBar101.png", id:"LowerBar101"},
+		{src:"images/MenuHeader101.png", id:"MenuHeader101"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.EvillaFinal();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 30;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from EndleFinalMusicDeleted</title>
+
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>
+<script src="EndleFinalMusicDeleted.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Abysson.png", id:"Abysson"},
+		{src:"images/Bkgrnd_Small.png", id:"Bkgrnd_Small"},
+		{src:"images/BlueGlow.png", id:"BlueGlow"},
+		{src:"images/e1001.jpg", id:"e1001"},
+		{src:"images/e1002.jpg", id:"e1002"},
+		{src:"images/e1003.jpg", id:"e1003"},
+		{src:"images/e1004.jpg", id:"e1004"},
+		{src:"images/e1005.jpg", id:"e1005"},
+		{src:"images/e1006.jpg", id:"e1006"},
+		{src:"images/e1007.jpg", id:"e1007"},
+		{src:"images/e1008.jpg", id:"e1008"},
+		{src:"images/e1009.jpg", id:"e1009"},
+		{src:"images/e1010.jpg", id:"e1010"},
+		{src:"images/e1011.jpg", id:"e1011"},
+		{src:"images/e1012.jpg", id:"e1012"},
+		{src:"images/e1013.jpg", id:"e1013"},
+		{src:"images/e1014.jpg", id:"e1014"},
+		{src:"images/e1015.jpg", id:"e1015"},
+		{src:"images/e1016.jpg", id:"e1016"},
+		{src:"images/e1018.jpg", id:"e1018"},
+		{src:"images/e1019.jpg", id:"e1019"},
+		{src:"images/e1020.jpg", id:"e1020"},
+		{src:"images/e1021.jpg", id:"e1021"},
+		{src:"images/e1023.jpg", id:"e1023"},
+		{src:"images/e1024.jpg", id:"e1024"},
+		{src:"images/e1026.jpg", id:"e1026"},
+		{src:"images/e1027.jpg", id:"e1027"},
+		{src:"images/e1029.jpg", id:"e1029"},
+		{src:"images/e1030.jpg", id:"e1030"},
+		{src:"images/e1032.jpg", id:"e1032"},
+		{src:"images/e1033.jpg", id:"e1033"},
+		{src:"images/e1035.jpg", id:"e1035"},
+		{src:"images/e1036.jpg", id:"e1036"},
+		{src:"images/e1038.jpg", id:"e1038"},
+		{src:"images/e1039.jpg", id:"e1039"},
+		{src:"images/e1041.jpg", id:"e1041"},
+		{src:"images/e1042.jpg", id:"e1042"},
+		{src:"images/e1044.jpg", id:"e1044"},
+		{src:"images/e1045.jpg", id:"e1045"},
+		{src:"images/e1047.jpg", id:"e1047"},
+		{src:"images/e1048.jpg", id:"e1048"},
+		{src:"images/e1050.jpg", id:"e1050"},
+		{src:"images/e1051.jpg", id:"e1051"},
+		{src:"images/e1053.jpg", id:"e1053"},
+		{src:"images/e1054.jpg", id:"e1054"},
+		{src:"images/e1056.jpg", id:"e1056"},
+		{src:"images/e1057.jpg", id:"e1057"},
+		{src:"images/e1059.jpg", id:"e1059"},
+		{src:"images/e1060.jpg", id:"e1060"},
+		{src:"images/e1062.jpg", id:"e1062"},
+		{src:"images/e1063.jpg", id:"e1063"},
+		{src:"images/e1065.jpg", id:"e1065"},
+		{src:"images/e1066.jpg", id:"e1066"},
+		{src:"images/e1068.jpg", id:"e1068"},
+		{src:"images/e1069.jpg", id:"e1069"},
+		{src:"images/e1071.jpg", id:"e1071"},
+		{src:"images/e1072.jpg", id:"e1072"},
+		{src:"images/e1074.jpg", id:"e1074"},
+		{src:"images/e1075.jpg", id:"e1075"},
+		{src:"images/e1077.jpg", id:"e1077"},
+		{src:"images/e1078.jpg", id:"e1078"},
+		{src:"images/e1080.jpg", id:"e1080"},
+		{src:"images/e1081.jpg", id:"e1081"},
+		{src:"images/e1083.jpg", id:"e1083"},
+		{src:"images/e1084.jpg", id:"e1084"},
+		{src:"images/e1086.jpg", id:"e1086"},
+		{src:"images/e1087.jpg", id:"e1087"},
+		{src:"images/e1089.jpg", id:"e1089"},
+		{src:"images/e1090.jpg", id:"e1090"},
+		{src:"images/e1092.jpg", id:"e1092"},
+		{src:"images/e1093.jpg", id:"e1093"},
+		{src:"images/e1095.jpg", id:"e1095"},
+		{src:"images/e1096.jpg", id:"e1096"},
+		{src:"images/e1098.jpg", id:"e1098"},
+		{src:"images/e1099.jpg", id:"e1099"},
+		{src:"images/e1101.jpg", id:"e1101"},
+		{src:"images/e1102.jpg", id:"e1102"},
+		{src:"images/e1104.jpg", id:"e1104"},
+		{src:"images/e1105.jpg", id:"e1105"},
+		{src:"images/e1107.jpg", id:"e1107"},
+		{src:"images/e1108.jpg", id:"e1108"},
+		{src:"images/e1110.jpg", id:"e1110"},
+		{src:"images/e1111.jpg", id:"e1111"},
+		{src:"images/e1113.jpg", id:"e1113"},
+		{src:"images/e1114.jpg", id:"e1114"},
+		{src:"images/e1116.jpg", id:"e1116"},
+		{src:"images/e1117.jpg", id:"e1117"},
+		{src:"images/e1119.jpg", id:"e1119"},
+		{src:"images/e1120.jpg", id:"e1120"},
+		{src:"images/e1.png", id:"e1"},
+		{src:"images/e2.png", id:"e2"},
+		{src:"images/e3.png", id:"e3"},
+		{src:"images/e4.jpg", id:"e4"},
+		{src:"images/EndleEye101.png", id:"EndleEye101"},
+		{src:"images/EndleEye102.jpg", id:"EndleEye102"},
+		{src:"images/EndleEye103.jpg", id:"EndleEye103"},
+		{src:"images/EndleHiRezFinal101.png", id:"EndleHiRezFinal101"},
+		{src:"images/Fire.png", id:"Fire"},
+		{src:"images/flames01.png", id:"flames01"},
+		{src:"images/flames02.png", id:"flames02"},
+		{src:"images/flames03.png", id:"flames03"},
+		{src:"images/flames04.png", id:"flames04"},
+		{src:"images/flames05.png", id:"flames05"},
+		{src:"images/flames06.png", id:"flames06"},
+		{src:"images/flames07.png", id:"flames07"},
+		{src:"images/flames08.png", id:"flames08"},
+		{src:"images/flames09.png", id:"flames09"},
+		{src:"images/flames10.png", id:"flames10"},
+		{src:"images/flames11.png", id:"flames11"},
+		{src:"images/flames12.png", id:"flames12"},
+		{src:"images/flames13.png", id:"flames13"},
+		{src:"images/flames14.png", id:"flames14"},
+		{src:"images/flames15.png", id:"flames15"},
+		{src:"images/flames16.png", id:"flames16"},
+		{src:"images/flames17.png", id:"flames17"},
+		{src:"images/flames18.png", id:"flames18"},
+		{src:"images/flames19.png", id:"flames19"},
+		{src:"images/flames20.png", id:"flames20"},
+		{src:"images/flames21.png", id:"flames21"},
+		{src:"images/flames22.png", id:"flames22"},
+		{src:"images/flames23.png", id:"flames23"},
+		{src:"images/flames24.png", id:"flames24"},
+		{src:"images/flames25.png", id:"flames25"},
+		{src:"images/flames26.png", id:"flames26"},
+		{src:"images/flames27.png", id:"flames27"},
+		{src:"images/flames28.png", id:"flames28"},
+		{src:"images/flames29.png", id:"flames29"},
+		{src:"images/flames30.png", id:"flames30"},
+		{src:"images/flames31.png", id:"flames31"},
+		{src:"images/flames32.png", id:"flames32"},
+		{src:"images/flames33.png", id:"flames33"},
+		{src:"images/flames34.png", id:"flames34"},
+		{src:"images/flames35.png", id:"flames35"},
+		{src:"images/flames36.png", id:"flames36"},
+		{src:"images/flames37.png", id:"flames37"},
+		{src:"images/flames38.png", id:"flames38"},
+		{src:"images/flames39.png", id:"flames39"},
+		{src:"images/flames40.png", id:"flames40"},
+		{src:"images/flames41.png", id:"flames41"},
+		{src:"images/flames42.png", id:"flames42"},
+		{src:"images/flames43.png", id:"flames43"},
+		{src:"images/flames44.png", id:"flames44"},
+		{src:"images/flames45.png", id:"flames45"},
+		{src:"images/flames46.png", id:"flames46"},
+		{src:"images/flames47.png", id:"flames47"},
+		{src:"images/flames48.png", id:"flames48"},
+		{src:"images/flames49.png", id:"flames49"},
+		{src:"images/flames50.png", id:"flames50"},
+		{src:"images/flames51.png", id:"flames51"},
+		{src:"images/flames52.png", id:"flames52"},
+		{src:"images/flames53.png", id:"flames53"},
+		{src:"images/flames54.png", id:"flames54"},
+		{src:"images/flames55.png", id:"flames55"},
+		{src:"images/flames56.png", id:"flames56"},
+		{src:"images/flames57.png", id:"flames57"},
+		{src:"images/flames58.png", id:"flames58"},
+		{src:"images/flames59.png", id:"flames59"},
+		{src:"images/flames60.png", id:"flames60"},
+		{src:"images/flames61.png", id:"flames61"},
+		{src:"images/flames62.png", id:"flames62"},
+		{src:"images/flames63.png", id:"flames63"},
+		{src:"images/flames64.png", id:"flames64"},
+		{src:"images/flames65.png", id:"flames65"},
+		{src:"images/flames66.png", id:"flames66"},
+		{src:"images/flames67.png", id:"flames67"},
+		{src:"images/flames68.png", id:"flames68"},
+		{src:"images/flames69.png", id:"flames69"},
+		{src:"images/flames70.png", id:"flames70"},
+		{src:"images/flames71.png", id:"flames71"},
+		{src:"images/flames72.png", id:"flames72"},
+		{src:"images/flames73.png", id:"flames73"},
+		{src:"images/flames74.png", id:"flames74"},
+		{src:"images/flames75.png", id:"flames75"},
+		{src:"images/flames76.png", id:"flames76"},
+		{src:"images/flames77.png", id:"flames77"},
+		{src:"images/flames78.png", id:"flames78"},
+		{src:"images/flames79.png", id:"flames79"},
+		{src:"images/flames80.png", id:"flames80"},
+		{src:"images/flames81.png", id:"flames81"},
+		{src:"images/gate.png", id:"gate"},
+		{src:"images/HiImAnEndlecopy.png", id:"HiImAnEndlecopy"},
+		{src:"images/HiImAnEndle.png", id:"HiImAnEndle"},
+		{src:"images/HiImAnEndlepngcopy.png", id:"HiImAnEndlepngcopy"},
+		{src:"images/IDoEnsBidding.png", id:"IDoEnsBidding"},
+		{src:"images/Idoevilenscopy.png", id:"Idoevilenscopy"},
+		{src:"images/Idoevilens.png", id:"Idoevilens"},
+		{src:"images/Idoevilenspngcopy.png", id:"Idoevilenspngcopy"},
+		{src:"images/Iwascreatedbycopy.png", id:"Iwascreatedbycopy"},
+		{src:"images/Iwascreatedby.png", id:"Iwascreatedby"},
+		{src:"images/Iwascreatedbypngcopy.png", id:"Iwascreatedbypngcopy"},
+		{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		{src:"images/LowerBar101.png", id:"LowerBar101"},
+		{src:"images/MenuHeader101.png", id:"MenuHeader101"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TemplateEndle.jpg", id:"TemplateEndle"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"},
+		{src:"sounds/_0sound44.mp3", id:"_0sound44"},
+		{src:"sounds/_12sound3.mp3", id:"_12sound3"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.installPlugin(createjs.Sound);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.EndleFinalMusicDeleted();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 30;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+function playSound(id, loop) {
+	createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>

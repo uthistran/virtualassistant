@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from AbyssonLocationFinal</title>
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>	
+<script src="AbyssonLocationFinal.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Abysson.png", id:"Abysson"},
+		{src:"images/Abyssonpngcopy.png", id:"Abyssonpngcopy"},
+		{src:"images/Bkgrnd_Small.jpg", id:"Bkgrnd_Small"},
+		{src:"images/BlueGlow.png", id:"BlueGlow"},
+		{src:"images/BrassRing.png", id:"BrassRing"},
+		{src:"images/Ensonlygoal.png", id:"Ensonlygoal"},
+		{src:"images/Ensonlygoalpngcopy.png", id:"Ensonlygoalpngcopy"},
+		{src:"images/EvillaRuda.png", id:"EvillaRuda"},
+		{src:"images/EvillaRudapngcopy.png", id:"EvillaRudapngcopy"},
+		{src:"images/EvillaRudapngcopy2.png", id:"EvillaRudapngcopy2"},
+		{src:"images/GoldRing101.png", id:"GoldRing101"},
+		{src:"images/GoldRing102.png", id:"GoldRing102"},
+		{src:"images/GoldRing103.png", id:"GoldRing103"},
+		{src:"images/GoldRing104.png", id:"GoldRing104"},
+		{src:"images/HeWill.png", id:"HeWill"},
+		{src:"images/HeWillpngcopy.png", id:"HeWillpngcopy"},
+		//{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		//{src:"images/LowerBar101.png", id:"LowerBar101"},
+		{src:"images/MenuHeader101.png", id:"MenuHeader101"},
+		{src:"images/Namedafterhimself.png", id:"Namedafterhimself"},
+		{src:"images/Namedafterhimselfpngcopy.png", id:"Namedafterhimselfpngcopy"},
+		{src:"images/RudaCode.png", id:"RudaCode"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TheDarkTerrible.png", id:"TheDarkTerrible"},
+		{src:"images/TheDarkTerriblepngcopy.png", id:"TheDarkTerriblepngcopy"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"},
+		{src:"images/WhereEvilEn.png", id:"WhereEvilEn"},
+		{src:"images/WhereEvilEnpngcopy.png", id:"WhereEvilEnpngcopy"},
+		{src:"images/WithHisArmy.png", id:"WithHisArmy"},
+		{src:"images/WithHisArmypngcopy.png", id:"WithHisArmypngcopy"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.AbyssonLocationFinal();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 30;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>

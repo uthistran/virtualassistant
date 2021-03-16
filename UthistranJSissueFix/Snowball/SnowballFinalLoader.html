@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CreateJS export from SnowballFinalLoader</title>
+
+<link rel="icon" href="../Common/NewLogoFlashPreloader.png">
+<script src="../Common/createjs.min.js"></script>
+<script src="SnowballFinalLoader.js"></script>
+
+<script>
+var canvas, stage, exportRoot;
+
+function init() {
+	canvas = document.getElementById("canvas");
+	images = images||{};
+
+	var manifest = [
+		{src:"images/Background.png", id:"Background"},
+		{src:"images/Cropped980MenuBareEnterYourChildWithGlowButtedToTop.png", id:"Cropped980MenuBareEnterYourChildWithGlowButtedToTop"},
+		{src:"images/Eyelids.png", id:"Eyelids"},
+		{src:"images/gazebobackground.png", id:"gazebobackground"},
+		{src:"images/Gazebo.png", id:"Gazebo"},
+		{src:"images/HiSnowball.png", id:"HiSnowball"},
+		{src:"images/ImMistysPet.png", id:"ImMistysPet"},
+		{src:"images/LogoIcon101.png", id:"LogoIcon101"},
+		{src:"images/NanciSnowball.png", id:"NanciSnowball"},
+		{src:"images/PixieDust.png", id:"PixieDust"},
+		{src:"images/snowBall101.png", id:"snowBall101"},
+		{src:"images/SnowBallBlink101.png", id:"SnowBallBlink101"},
+		{src:"images/SnowBallBlink102.png", id:"SnowBallBlink102"},
+		{src:"images/SnowBallWings.png", id:"SnowBallWings"},
+		{src:"images/StageBottomcopy.png", id:"StageBottomcopy"},
+		{src:"images/StageNew2.png", id:"StageNew2"},
+		{src:"images/TwinkleStar111.png", id:"TwinkleStar111"},
+		{src:"images/Wings.png", id:"Wings"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function handleComplete() {
+	exportRoot = new lib.SnowballFinalLoader();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.framerate = 12;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+</script>
+</head>
+
+<body onload="init();" style="background-color:#000000">
+	<canvas id="canvas" width="980" height="980" style="background-color:#000000"></canvas>
+</body>
+</html>
